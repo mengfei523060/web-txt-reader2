@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>拾光阅读 · 简洁的小说阅读站</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════════ 书库 ══════════════ -->
+<section id="view-library" class="view">
+  <header class="lib-head">
+    <div class="brand">拾光<span>阅读</span></div>
+    <div class="lib-tools">
+      <input id="search" class="search" type="search" placeholder="搜索书名…" autocomplete="off">
+      <button id="btn-import" class="btn primary">＋ 导入 TXT</button>
+      <button id="btn-lib-theme" class="icon-btn" title="切换主题">◐</button>
+    </div>
+  </header>
+
+  <div id="lib-stats" class="lib-stats"></div>
+  <div id="lib-grid" class="lib-grid"></div>
+  <div id="lib-empty" class="lib-empty hidden">
+    <div class="empty-mark">📖</div>
+    <p>书库还空着。点击「导入 TXT」，或直接把 .txt 小说拖进窗口。</p>
+  </div>
+
+  <div id="drop-mask" class="drop-mask hidden"><span>松手即可导入 TXT 文件</span></div>
+  <input id="file-input" type="file" accept=".txt,text/plain" multiple hidden>
+</section>
+
+<!-- ══════════════ 阅读器 ══════════════ -->
+<section id="view-reader" class="view hidden">
+  <header id="r-head" class="r-head">
+    <button id="btn-back" class="icon-btn" title="返回书库（Esc）">‹ 书库</button>
+    <div class="r-heading">
+      <div id="r-book" class="r-book"></div>
+      <div id="r-chapter" class="r-chapter"></div>
+    </div>
+    <div class="r-tools">
+      <button id="btn-toc" class="icon-btn" title="目录（T）">目录</button>
+      <button id="btn-bm" class="icon-btn" title="加入书签（B）">书签</button>
+      <button id="btn-settings" class="icon-btn" title="阅读设置（S）">设置</button>
+    </div>
+  </header>
+
+  <main id="stage" class="stage">
+    <div id="paper" class="paper"><div id="content" class="content"></div></div>
+    <div class="tap-zone tz-left"  id="tz-left"  title="上一页"></div>
+    <div class="tap-zone tz-mid"   id="tz-mid"   title="收起 / 展开工具栏"></div>
+    <div class="tap-zone tz-right" id="tz-right" title="下一页"></div>
+  </main>
+
+  <footer id="r-foot" class="r-foot">
+    <button id="btn-prev-ch" class="foot-btn">上一章</button>
+    <div class="foot-mid">
+      <span id="page-ind">– / –</span>
+      <span class="dot">·</span>
+      <span id="pct-ind">0%</span>
+    </div>
+    <button id="btn-next-ch" class="foot-btn">下一章</button>
+  </footer>
+
+  <div id="chrome-hint" class="chrome-hint hidden">点击页面中间可唤回工具栏</div>
+</section>
+
+<!-- ══════════════ 抽屉（目录 / 书签 / 设置） ══════════════ -->
+<div id="scrim" class="scrim hidden"></div>
+<aside id="drawer" class="drawer" aria-hidden="true">
+  <div class="drawer-head">
+    <span id="drawer-title"></span>
+    <button id="btn-drawer-close" class="icon-btn" title="关闭">✕</button>
+  </div>
+  <div id="drawer-body" class="drawer-body"></div>
+</aside>
+
+<div id="toast" class="toast" role="status"></div>
+
+<script src="js/db.js"></script>
+<script src="js/parser.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
