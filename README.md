@@ -48,3 +48,4 @@ js/parser.js      解码 / 章节切分 / 广告行清洗
 js/demo.js        内置示例书
 js/app.js         主逻辑（分页、书签、书库、设置）
 ```
+<img width="1893" height="1754" alt="1111" src="https://github.com/user-attachments/assets/db93a5ed-6d67-4300-9af9-62168888b6da" />
