@@ -1,4 +1,4 @@
-# 使用Qwen3.8-flash-next-q4自动生成，方便多平台本地阅读小说.
+# 使用Qwen3.8-flash-next-q4自动生成，方便多平台本地阅读小说， 另有web-txt-reader1，本地单文件阅读器，直接浏览器打开就能用https://github.com/mengfei523060/web-txt-reader1 .
 # 拾光阅读 · 简洁小说阅读站
 
 一个零依赖的纯前端小说 TXT 阅读网站：宣纸质感、真实翻页、书签、书库。
